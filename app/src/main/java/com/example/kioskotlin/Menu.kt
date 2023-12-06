@@ -3,18 +3,10 @@ package com.example.kioskotlin
 class Menu {
     fun menu(num: Int) {
         when(num) {
-            1 -> {
-                Burgers().burgermenu()
-            }
-            2 -> {
-                FrozenCustards()
-            }
-            3 -> {
-                Drinks()
-            }
-            4 -> {
-                Beer()
-            }
+            1 -> Burgers().burgermenu()
+            2 -> FrozenCustards()
+            3 -> Drinks()
+            4 -> Beer()
         }
     }
 }
