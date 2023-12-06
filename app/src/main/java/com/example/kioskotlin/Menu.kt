@@ -4,11 +4,15 @@ class Menu {
     fun menu(num: Int) {
         when(num) {
             1 -> Burgers().burgermenu()
-            2 -> FrozenCustards()
-            3 -> Drinks()
-            4 -> Beer()
+            2 -> FrozenCustards().frozencustardsmenu()
+            3 -> Drinks().drinksmenu()
+            4 -> Beer().beermenu()
         }
     }
+}
+
+fun menuselected(menunames:Menus, select: Int) {
+    println("${menunames.menuname[select-1]} 선택")
 }
 
 class KioskMain:Menus() {
@@ -28,7 +32,6 @@ class KioskMain:Menus() {
         }
     }
 }
-
 class BurgerMenu:Menus() {
     override val menuname = arrayOf<String>("ShackBurger", "SmokeShack", "Shroom Burger", "Shack Stack", "Cheeseburger","Hamburger","뒤로가기")
     override val numarray = arrayOf<Int>(1, 2, 3, 4, 5, 6, 0)
@@ -43,6 +46,60 @@ class BurgerMenu:Menus() {
                 4 -> println("슈룸 버거와 쉑버거의 맛을 한번에 즐길 수 있는 메뉴")
                 5 -> println("포테이토 번과 비프패티, 치즈가 토핑된 치즈버거")
                 6 -> println("포테이토 번과 비프페티를 기본으로 신선한 양상추, 토마토 피클, 양파 토핑을 취향에 따라 선택할 수 있는 버거")
+                0 -> println("뒤로가기")
+            }
+        }
+    }
+}
+class FrozenCustardMenu:Menus() {
+    override val menuname = arrayOf<String>("Shakes", "Shake of the Week", "Red Bean Shake", "Floats", "Cups & Cones", "Concretes", "Shack Attack","뒤로가기")
+    override val numarray = arrayOf<Int>(1, 2, 3, 4, 5, 6, 7, 0)
+    override fun kioskmenu() {
+        println("[ Frozen Custard MENU ]")
+        for (i in menuname.indices) {
+            print("${numarray[i]}. ${menuname[i]} | ")
+            when (numarray[i]) {
+                1 -> println("바닐라, 초콜렛, 솔티드 카라멜, 블랙 & 화이트, 스트로베리, 피넛버터, 커피")
+                2 -> println("특별한 커스터드 플레이버")
+                3 -> println("신선한 커스터드와 함께 우유와 레드빈이 블렌딩 된 시즈널 쉐이크")
+                4 -> println("루트 비어, 퍼플 카우, 크림 시클")
+                5 -> println("바닐라, 초콜렛, Flavor of the Week")
+                6 -> println("쉐이크쉑의 쫀득한 커스터드와 다양한 믹스-인의 조합")
+                7 -> println("초콜렛 퍼지 소스, 초콜렛 트러플 쿠키, Lumiere 초콜렛 청크와 스프링클이 들어간 진한 초콜렛 커스터드")
+                0 -> println("뒤로가기")
+            }
+        }
+    }
+}
+class DrinksMenu:Menus() {
+    override val menuname = arrayOf<String>("Shack-made Lemonade", "Fresh Brewed Iced Tea", "Fifty/Fifty", "Fountain Soda", "Abita Root Beer", "Bottled Water","뒤로가기")
+    override val numarray = arrayOf<Int>(1, 2, 3, 4, 5, 6, 0)
+    override fun kioskmenu() {
+        println("[ Drinks MENU ]")
+        for (i in menuname.indices) {
+            print("${numarray[i]}. ${menuname[i]} | ")
+            when (numarray[i]) {
+                1 -> println("매장에서 직접 만드는 상큼한 레몬에이드(오리지널/시즈널)")
+                2 -> println("직접 유기농 홍차를 우려낸 아이스티")
+                3 -> println("레몬에이드와 아이스티의 만남")
+                4 -> println("코카콜라, 코카콜라 제로, 스프라이트, 환타 오렌지, 환타 그레이프")
+                5 -> println("청량감 있는 독특한 미국식 무알콜 탄산음료")
+                6 -> println("지리산 암반대수층으로 만든 프리미엄 생수")
+                0 -> println("뒤로가기")
+            }
+        }
+    }
+}
+class BeerMenu:Menus() {
+    override val menuname = arrayOf<String>("ShackMeister Ale", "Magpie Brewing Co.", "뒤로가기")
+    override val numarray = arrayOf<Int>(1, 2, 0)
+    override fun kioskmenu() {
+        println("[ Beer MENU ]")
+        for (i in menuname.indices) {
+            print("${numarray[i]}. ${menuname[i]} | ")
+            when (numarray[i]) {
+                1 -> println("쉐이크쉑 버거를 위해 뉴욕 브루클린 브루어리에서 특별히 양조한 에일 맥주")
+                2 -> println("Magpie Brewing Co.")
                 0 -> println("뒤로가기")
             }
         }

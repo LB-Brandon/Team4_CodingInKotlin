@@ -14,7 +14,7 @@ class Buy {
         } else if( upgrade == 0 ) {
             price = Pay().price(foodSelected)
         }
-        println("잔액 : $money")
+        println("소지금 : $money")
         myMoney?.run {
             if(money >= price) {
                 println("[${foodSelected} 구매 중]: [${money} - ${price}] = ${money - price}")
