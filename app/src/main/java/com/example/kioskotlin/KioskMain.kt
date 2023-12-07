@@ -2,7 +2,7 @@ package com.example.kioskotlin
 
 fun main() {
     while (true) {
-        val km = KioskMain()
+        val km = KioskMenu()
         km.kioskmenu()
 
         try {

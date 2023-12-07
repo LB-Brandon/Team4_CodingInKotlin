@@ -4,6 +4,7 @@ class Beer {
     fun beermenu() {
         val bm = BeerMenu()
         bm.kioskmenu()
+
         var select = readln().toInt()
 
         if(select !in bm.numarray) select = 0

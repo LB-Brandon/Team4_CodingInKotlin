@@ -1,6 +1,6 @@
 package com.example.kioskotlin
 
-class KioskMain:Menus() {
+class KioskMenu:Menus() {
     override val menuname = arrayOf("Burgers", "Frozen Custard", "Drinks", "Beer", "종료")
     override val numarray = arrayOf(1, 2, 3, 4, 0)
     override fun kioskmenu() {
