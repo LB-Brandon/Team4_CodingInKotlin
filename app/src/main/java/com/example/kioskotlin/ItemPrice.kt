@@ -1,6 +1,6 @@
 package com.example.kioskotlin
 
-class Pay {
+class ItemPrice {
     fun price(food:String):Int {
         return when (food) {
             "ShackBurger" -> 6900

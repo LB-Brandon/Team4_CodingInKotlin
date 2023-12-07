@@ -11,12 +11,16 @@ class Details {
         }
     }
 }
-
+abstract class Menus {
+    abstract val menuname:Array<String>
+    abstract val numarray:Array<Int>
+    abstract fun kioskmenu()
+}
 fun single(foods:String) {
-    println("Normal : ${Pay().price(foods)} W")
+    println("Normal : ${ItemPrice().price(foods)} W")
 }
 fun double(foods:String) {
-    println("Normal : ${Pay().price(foods)} W, Upgrade : ${Pay().sizeup(foods)} W")
+    println("Normal : ${ItemPrice().price(foods)} W, Upgrade : ${ItemPrice().sizeup(foods)} W")
 }
 
 fun upgrade(food:String):Int {
@@ -52,9 +56,4 @@ fun upgrade(food:String):Int {
         }
     }
     return upgrade
-}
-abstract class Menus {
-    abstract val menuname:Array<String>
-    abstract val numarray:Array<Int>
-    abstract fun kioskmenu()
 }

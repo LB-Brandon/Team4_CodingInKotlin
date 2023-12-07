@@ -1,11 +1,10 @@
 package com.example.kioskotlin
 
-import kotlin.random.Random
-
 fun main() {
     while (true) {
         val km = KioskMain()
         km.kioskmenu()
+
         try {
             val select = readln().toInt()
 
