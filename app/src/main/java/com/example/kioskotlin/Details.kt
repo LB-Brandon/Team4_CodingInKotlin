@@ -11,11 +11,7 @@ class Details {
         }
     }
 }
-abstract class Menus {
-    abstract val menuname:Array<String>
-    abstract val numarray:Array<Int>
-    abstract fun kioskmenu()
-}
+
 fun single(foods:String) {
     println("Normal : ${ItemPrice().price(foods)} W")
 }

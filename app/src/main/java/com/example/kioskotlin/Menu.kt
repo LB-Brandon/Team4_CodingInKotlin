@@ -14,3 +14,9 @@ class Menu {
 fun menuselected(menunames:Menus, select: Int) {
     println("${menunames.menuname[select-1]} 선택")
 }
+
+abstract class Menus {
+    abstract val menuname:Array<String>
+    abstract val numarray:Array<Int>
+    abstract fun kioskmenu()
+}
